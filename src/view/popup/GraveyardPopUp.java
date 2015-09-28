@@ -20,8 +20,11 @@ public class GraveyardPopUp extends JFrame{
 	public GraveyardPopUp(Teams color, ChessModel model){
 		
 		setTitle(color.toString().toUpperCase()+" GRAVEYARD");
+		setBackground(Color.RED);//color == Teams.WHITE ? Color.WHITE : Color.BLACK);
 		
 		JPanel panel = (model.getGraveyard()).toVideo(color);	
+		panel.setBackground(color == Teams.WHITE ? Color.WHITE : Color.BLACK);
+		
 		JPanel ok = new JPanel();
 		JButton OK = new JButton("OK");
 		OK.setBorderPainted(false);
@@ -40,12 +43,14 @@ public class GraveyardPopUp extends JFrame{
 			
 		});
 		ok.add(OK);
-			
+		
 		add(panel, BorderLayout.NORTH);
-		add(ok, BorderLayout.SOUTH);
+		add(ok, BorderLayout.CENTER);
 		setAlwaysOnTop(true);
 		pack();
+		//setSize(350, 150);
 		setVisible(true);
+		//setResizable(false);
 		setLocationRelativeTo(null);
 	}
 

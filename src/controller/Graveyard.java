@@ -59,16 +59,16 @@ public class Graveyard {
 	public JPanel toVideo(Teams color){
 		JPanel panel = new JPanel();
 		
+		
 		Color col = color == Teams.WHITE ? Color.WHITE : Color.BLACK;
 		Color inv = color == Teams.BLACK ? Color.WHITE : Color.BLACK;
 				
 		int length = color == Teams.WHITE ? Wdeath : Bdeath;
 		ImageIcon image = null;
-		
+		panel.setBackground(col);
 		int count;
 		
-		panel.setBackground(col);
-		
+	
 		if(length == 0){
 			JLabel label = new JLabel("The "+ color.toString().toLowerCase() +" graveyard is still Empty");
 			label.setFont(new Font("Georgia", Font.ITALIC, 20));
@@ -119,6 +119,7 @@ public class Graveyard {
 				}
 			
 		}
+		
 		return panel;
 	}
 
